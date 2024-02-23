@@ -2,6 +2,18 @@
 
 💹 Token data API
 
+https://token-api.elimu.ai
+
+## Development
+
+You can run several commands:
+
+`npm run dev` - Starts the development server.
+
+`npm run build` - Builds the app for production.
+
+`npm start` - Runs the built app in production mode.
+
 ---
 
 <p align="center">
