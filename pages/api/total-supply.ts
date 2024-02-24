@@ -7,11 +7,11 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   const provider = getDefaultProvider("mainnet");
-  const contract = new ethers.Contract(
+  const tokenContract = new ethers.Contract(
     "0xe29797910D413281d2821D5d9a989262c8121CC2",
     ElimuToken.abi,
     provider
   );
-  const totalSupply = await contract.totalSupply();
+  const totalSupply = await tokenContract.totalSupply();
   res.status(200).send(ethers.formatEther(totalSupply));
 }
