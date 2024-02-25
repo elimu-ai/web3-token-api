@@ -13,6 +13,11 @@ export default function Index() {
           /api/total-supply
         </Link>
       </li>
+      <li>
+        <Link href="/api/max-supply">
+          /api/max-supply
+        </Link>
+      </li>
     </ul>
   );
 }
