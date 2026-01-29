@@ -12,11 +12,9 @@ export default async function handler(
     const maxSupply =
       await tokenContract.getMaxTotalSupplyForTimestamp(timestampJuly2030);
 
-    res.status(200).json({ maxSupply: ethers.formatEther(maxSupply) });
+    res.status(200).send(ethers.formatEther(maxSupply));
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({ error: "An error occurred while fetching the max supply." });
+    res.status(500).send("An error occurred while fetching the max supply.");
   }
 }

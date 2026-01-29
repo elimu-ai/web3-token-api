@@ -8,5 +8,5 @@ export default async function handler(
 ) {
   const totalSupply = await tokenContract.totalSupply();
 
-  res.status(200).json({ totalSupply: ethers.formatEther(totalSupply) });
+  res.status(200).send(ethers.formatEther(totalSupply));
 }

@@ -41,7 +41,5 @@ export default async function handler(
     nullBalance -
     disperseBalance;
 
-  res
-    .status(200)
-    .json({ circulatingSupply: ethers.formatEther(circulatingSupply) });
+  res.status(200).send(ethers.formatEther(circulatingSupply));
 }
