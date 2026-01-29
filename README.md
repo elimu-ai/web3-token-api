@@ -4,6 +4,10 @@
 
 https://token-api.elimu.ai
 
+## Environment variables
+Duplicate the `.env.sample` file and rename to `.env` to set up your 
+environment variables.
+
 ## Development
 
 You can run several commands:
