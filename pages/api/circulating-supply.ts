@@ -26,7 +26,8 @@ export default async function handler(
   const nullBalance = await tokenContract.balanceOf("0x000000000000000000000000000000000000dEaD");
   const dripsNullBalance = await dripsContract.splittable(BigInt("0x0000000000000000000000000000000000000000"), tokenContract.target);
   const disperseBalance = await tokenContract.balanceOf("0xD152f549545093347A162Dce210e7293f1452150");
-  const circulatingSupply = totalSupply - treasuryBalance - safeBalance - hedgeyBalance - governBalance - nullBalance - dripsNullBalance - disperseBalance;
+  const protocolGuildBalance = await tokenContract.balanceOf("0x25941dC771bB64514Fc8abBce970307Fb9d477e9");
+  const circulatingSupply = totalSupply - treasuryBalance - safeBalance - hedgeyBalance - governBalance - nullBalance - dripsNullBalance - disperseBalance - protocolGuildBalance;
 
   res.status(200).send(ethers.formatEther(circulatingSupply));
 }
